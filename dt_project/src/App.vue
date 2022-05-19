@@ -1,5 +1,5 @@
 <template>
- <img alt= "Vue logo" scr="./assets/logo.png">
+ <img alt= "Vue logo" src="./assets/logo.png">
   <SignUp />
 </template>
 src\assets\logo_dt.png
