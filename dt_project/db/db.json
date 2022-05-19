@@ -1,44 +1,32 @@
 {
   "user": [
     {
-      "username": "elena",
+      "username": "nicoleta",
       "password": "12345",
       "id": 1
     },
     {
-      "username": "nico",
-      "password": "7777",
+      "username": "elena",
+      "password": "12345",
       "id": 2
     },
     {
       "username": "ilie",
-      "password": "789456123",
+      "password": "12345",
       "id": 3
     },
     {
       "username": "man",
-      "password": "2020",
+      "password": "12345",
       "id": 4
-    },
-    {
-      "username": "man",
-      "password": "2020",
-      "id": 5
-    },
-    {
-      "username": "dragos",
-      "password": "852",
-      "id": 6
     },
     {
       "username": "rehana",
       "password": "333",
-      "id": 7
+      "id": 5
     },
     {
-      "username": "valeria",
-      "password": "1523",
-      "id": 8
+      "id": 6
     }
   ]
 }
