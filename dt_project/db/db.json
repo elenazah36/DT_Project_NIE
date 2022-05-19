@@ -1,32 +1,47 @@
 {
-  "user": [
-    {
-      "username": "nicoleta",
-      "password": "12345",
-      "id": 1
-    },
-    {
-      "username": "elena",
-      "password": "12345",
-      "id": 2
-    },
-    {
-      "username": "ilie",
-      "password": "12345",
-      "id": 3
-    },
-    {
-      "username": "man",
-      "password": "12345",
-      "id": 4
-    },
-    {
-      "username": "rehana",
-      "password": "333",
-      "id": 5
-    },
-    {
-      "id": 6
-    }
-  ]
+    "user": [{
+            "username": "nicoleta",
+            "password": "12345",
+            "id": 1
+        },
+        {
+            "username": "elena",
+            "password": "12345",
+            "id": 2
+        },
+        {
+            "username": "ilie",
+            "password": "12345",
+            "id": 3
+        },
+        {
+            "username": "man",
+            "password": "12345",
+            "id": 4
+        },
+        {
+            "username": "rehana",
+            "password": "333",
+            "id": 5
+        },
+        {
+            "username": "elijah",
+            "password": "12345",
+            "id": 6
+        }
+    ],
+
+    "show": [{
+            "id": 1,
+            "name": "VLAD GRIGORESCU - LIVE SHOW Best of la ComicsClub!",
+            "date": "25/05/2022",
+            "time": "18:30"
+        },
+        {
+            "id": 2,
+            "name": "Concert Sarmalele Reci",
+            "date": "30/05/2022",
+            "time": "20:30"
+        }
+    ]
 }
