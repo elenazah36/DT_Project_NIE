@@ -9,6 +9,7 @@
         <td>Name</td>
         <td>Date</td>
         <td>Time</td>
+        <td>Actions</td>
 
     </tr>
     <tr v-for="item in show" :key="item.id">
@@ -16,6 +17,10 @@
         <td>{{item.name}}</td>
         <td>{{item.date}}</td>
         <td>{{item.time}}</td>
+        <td>
+            <router-link :to="'/update/'+item.id">Update</router-link>
+            <button v-on:click="deleteShow(item.id)">Delete</button>
+        </td>
     </tr>
 </table>
 </template>
@@ -36,8 +41,17 @@ export default {
     components:{
         Header
     },
-      async mounted(){
-        let user = localStorage.getItem('user-info');
+    methods:{
+        async deleteShow(id){
+            let result = await axios.delete("http://localhost:3000/show/"+id);
+            console.warn(result)
+            if(result.status==200){
+                this.loadData();
+            }
+        },
+
+        async loadData(){
+            let user = localStorage.getItem('user-info');
         this.username = JSON.parse(user).username;
         if(!user){
             this.$router.push({name:'SignUp'})
@@ -45,6 +59,10 @@ export default {
         let result = await axios.get("http://localhost:3000/show");
         console.warn(result)
         this.show = result.data;
+        }
+    },
+      async mounted(){
+        this.loadData();
     }
     
 }
