@@ -49,8 +49,13 @@ export default {
       mounted(){
         let user = localStorage.getItem('user-info');
         this.username = JSON.parse(user).username;
+        let isAdmin = JSON.parse(user).admin;
+
         if(!user){
             this.$router.push({name:'SignUp'})
+        }
+        if(!isAdmin){
+            this.$router.push({name:'Home'})
         }
     }
     

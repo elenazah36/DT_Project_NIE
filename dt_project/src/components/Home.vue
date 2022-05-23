@@ -21,7 +21,11 @@
         <td>Name</td>
         <td>Date</td>
         <td>Time</td>
+<<<<<<< HEAD
         <td></td>
+=======
+        <td v-show="isAdmin == true">Actions</td>
+>>>>>>> 461ab85a040ebeb8504a080cd4c3a6865083a138
 
     </tr>
     <tr v-for="item in show" :key="item.id">
@@ -29,8 +33,15 @@
         <td>{{item.name}}</td>
         <td>{{item.date}}</td>
         <td>{{item.time}}</td>
+<<<<<<< HEAD
         <td><router-link :to="'/update/'+item.id">Update</router-link></td>
         <td><button v-on:click="deleteShow(item.id)">Delete</button></td>
+=======
+        <td v-show="isAdmin == true">
+            <router-link :to="'/update/'+item.id">Update</router-link>
+            <button v-on:click="deleteShow(item.id)">Delete</button>
+        </td>
+>>>>>>> 461ab85a040ebeb8504a080cd4c3a6865083a138
     </tr>
 </table>
 </body> 
@@ -46,6 +57,7 @@ export default {
     name: 'Home', 
     data(){
         return {
+            isAdmin:'',
             username:'',
             show:[],
         }
@@ -64,13 +76,14 @@ export default {
 
         async loadData(){
             let user = localStorage.getItem('user-info');
-        this.username = JSON.parse(user).username;
-        if(!user){
-            this.$router.push({name:'SignUp'})
-        }
-        let result = await axios.get("http://localhost:3000/show");
-        console.warn(result)
-        this.show = result.data;
+            this.username = JSON.parse(user).username;
+            this.isAdmin = JSON.parse(user).admin;
+            if(!user){
+                this.$router.push({name:'SignUp'})
+            }
+            let result = await axios.get("http://localhost:3000/show");
+            console.warn(result)
+            this.show = result.data;
         }
     },
       async mounted(){
