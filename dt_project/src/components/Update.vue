@@ -41,7 +41,7 @@ export default {
     methods:{
         async updateShow(){
             console.warn(this.show);
-            const result = await axios.put("http://localhost:3000/show"+this.$route.params.id,{
+            const result = await axios.put("http://localhost:3000/show/"+this.$route.params.id,{
                 name:this.show.name,
                 date:this.show.date,
                 time:this.show.time,

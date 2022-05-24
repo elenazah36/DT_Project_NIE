@@ -1,6 +1,7 @@
 <template>
    <div class="nav">
        <router-link to="/">Home</router-link>
+       <router-link to="/history" v-show="isAdmin==null">Shows history</router-link>
        <router-link to="/add" v-show="isAdmin==true">Add Show</router-link>
        <!--<router-link to="/update" v-show="isAdmin==true">Update Show</router-link>-->
        <a v-on:click="logout" href="#">Logout</a>
