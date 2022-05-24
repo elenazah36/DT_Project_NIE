@@ -21,27 +21,20 @@
         <td>Name</td>
         <td>Date</td>
         <td>Time</td>
-<<<<<<< HEAD
         <td></td>
-=======
         <td v-show="isAdmin == true">Actions</td>
->>>>>>> 461ab85a040ebeb8504a080cd4c3a6865083a138
-
     </tr>
     <tr v-for="item in show" :key="item.id">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.date}}</td>
         <td>{{item.time}}</td>
-<<<<<<< HEAD
         <td><router-link :to="'/update/'+item.id">Update</router-link></td>
         <td><button v-on:click="deleteShow(item.id)">Delete</button></td>
-=======
         <td v-show="isAdmin == true">
             <router-link :to="'/update/'+item.id">Update</router-link>
             <button v-on:click="deleteShow(item.id)">Delete</button>
         </td>
->>>>>>> 461ab85a040ebeb8504a080cd4c3a6865083a138
     </tr>
 </table>
 </body> 
