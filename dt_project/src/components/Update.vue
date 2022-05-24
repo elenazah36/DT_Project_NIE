@@ -1,7 +1,5 @@
 <template>
 <Header/>
-<br/>
-<br/>
 <h1>
     Hello {{username}}, need replanning? Let's update the thing!
 </h1>
@@ -10,8 +8,7 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
+
 <!--Show add form-->
 
 <form class="add" id="up">

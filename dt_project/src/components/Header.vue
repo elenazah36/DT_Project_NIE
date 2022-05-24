@@ -14,16 +14,10 @@
 export default {
     //eslint-disable-next-line
     name:'Header',
-<<<<<<< HEAD
-     data(){
-        return {
-            username:'',
-=======
     data(){
         return{
             username:'',
             isAdmin:''
->>>>>>> 461ab85a040ebeb8504a080cd4c3a6865083a138
         }
     },
     methods:{
@@ -70,5 +64,10 @@ export default {
 .nav a:hover{
     background-color: #ddd;
     color:aqua
+}  
+.nav p{
+   color:antiquewhite;
+   text-align: right;
+   margin-right:15px;
 }
 </style>

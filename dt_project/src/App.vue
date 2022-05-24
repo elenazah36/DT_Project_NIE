@@ -41,7 +41,7 @@ body{
     width: 320px;
     height: 40px;
     border: 1px solid skyblue;
-    background: steelblue;
+    background: rgb(0, 0, 0);
     color: #fff;
     cursor: pointer;
 }

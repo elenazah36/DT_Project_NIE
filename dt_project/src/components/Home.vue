@@ -12,8 +12,6 @@
 <br/>
 
 
-
-
 <body>
 <table>
     <tr background-color=#095d22 >
@@ -21,7 +19,6 @@
         <td>Name</td>
         <td>Date</td>
         <td>Time</td>
-        <td></td>
         <td v-show="isAdmin == true">Actions</td>
     </tr>
     <tr v-for="item in show" :key="item.id">
@@ -29,8 +26,6 @@
         <td>{{item.name}}</td>
         <td>{{item.date}}</td>
         <td>{{item.time}}</td>
-        <td><router-link :to="'/update/'+item.id">Update</router-link></td>
-        <td><button v-on:click="deleteShow(item.id)">Delete</button></td>
         <td v-show="isAdmin == true">
             <router-link :to="'/update/'+item.id">Update</router-link>
             <button v-on:click="deleteShow(item.id)">Delete</button>

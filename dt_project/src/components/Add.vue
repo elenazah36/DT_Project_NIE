@@ -3,8 +3,12 @@
 <h1>
     Hello {{username}}, add a show! Let's SHOW them who's boss! 
 </h1>
+<br/>
+<br/>
+<br/>
+<br/>
 <!--Show add form-->
-<form class="add">
+<form class="add" id="up">
     <input type="text" name="name" placeholder="Enter name" v-model="show.name"/>
     <input type="date" name="date" placeholder="Enter date" v-model="show.date"/>
     <input type="time" name="time" placeholder="Enter starting time" v-model="show.time"/>
@@ -61,3 +65,16 @@ export default {
     
 }
 </script>
+<style>
+#up {
+  align-items: center;
+  border:10px;
+  border-color: rgb(191, 0, 255);
+  border-radius: 5px;
+  background-color: #757575;
+  width:30%;
+  height:60%;
+  padding:50px;
+  margin:auto;
+}
+</style>

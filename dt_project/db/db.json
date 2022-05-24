@@ -28,18 +28,13 @@
     {
       "username": "elijah",
       "password": "12345",
+      "admin": true,
       "id": 6
     },
     {
-      "username": "elijah",
-      "password": "12345",
+      "username": "",
+      "password": "BadauNicoleta2004",
       "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
     }
   ],
   "show": [
@@ -56,5 +51,4 @@
       "id": 3
     }
   ]
-    
 }

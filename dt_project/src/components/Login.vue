@@ -4,7 +4,11 @@
 <h1>
     Login
 </h1> 
-<div class="login">
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="login" id="up">
     <input type="text" v-model="username" placeholder="Enter Name" />
     <input type="password" v-model="password" placeholder="Enter Password" />
     <button v-on:click="login">Login</button>
@@ -50,3 +54,16 @@ export default {
     }
 }
 </script>
+<style>
+#up {
+  align-items: center;
+  border:10px;
+  border-color: rgb(191, 0, 255);
+  border-radius: 5px;
+  background-color: #757575;
+  width:30%;
+  height:60%;
+  padding:50px;
+  margin:auto;
+}
+</style>
