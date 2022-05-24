@@ -65,5 +65,10 @@ export default {
 .nav a:hover{
     background-color: #ddd;
     color:aqua
+}  
+.nav p{
+   color:antiquewhite;
+   text-align: right;
+   margin-right:15px;
 }
 </style>

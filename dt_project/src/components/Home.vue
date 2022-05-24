@@ -34,7 +34,7 @@
             <button v-on:click="deleteShow(item.id)">Delete</button>
         </td>
         <td  v-show="isAdmin == null">
-            <button v-on:click="bookShow(item.id)" :disabled="item.id == 2">Book Show</button>
+            <button v-on:click="bookShow(item.id)">Book Show</button>
         </td>
     </tr>
 </table>
