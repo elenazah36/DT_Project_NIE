@@ -55,8 +55,6 @@ export default{
                 seats: showResult.seats+1,
             });
             
-            
-            
             let resultDeleteBooking = await axios.delete("http://localhost:3000/booking/"+id);
             if(resultDeleteBooking.status==200 && resultUpdateShow.status==200){
                 this.loadData();
@@ -75,21 +73,17 @@ export default{
             let result = await axios.get("http://localhost:3000/booking?userid="+userid);
             this.bookings = result.data;
             
+            //store all shows' indexes in
             let showsaux=new Array();
-            let str ='';
             //eslint-disable-next-line
              result.data.forEach(async function(item,index){
-                str = str + ',' + item.showid
-            //     let itemid = item.showid;
-            //     let searchShow = await axios.get("http://localhost:3000/show/"+itemid);
                  showsaux.push(item.showid);
              })
 
-            str.substring(1);
-            
-
+            //get shows that the user booked
             let showsresult = await axios.get("http://localhost:3000/show?id_like=["+showsaux.toString()+"]");
             console.log("http://localhost:3000/show?id_like=["+showsaux.toString()+"]")
+            //send the shows in the table
             this.showsHistory = showsresult.data;
             console.log(this.showsHistory);
         },
