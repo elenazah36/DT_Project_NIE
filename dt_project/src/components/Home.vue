@@ -21,19 +21,20 @@
         <td>Name</td>
         <td>Date</td>
         <td>Time</td>
-        <td></td>
         <td v-show="isAdmin == true">Actions</td>
+        <td v-show="isAdmin == null">User Actions</td>
     </tr>
     <tr v-for="item in show" :key="item.id">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.date}}</td>
         <td>{{item.time}}</td>
-        <td><router-link :to="'/update/'+item.id">Update</router-link></td>
-        <td><button v-on:click="deleteShow(item.id)">Delete</button></td>
         <td v-show="isAdmin == true">
             <router-link :to="'/update/'+item.id">Update</router-link>
             <button v-on:click="deleteShow(item.id)">Delete</button>
+        </td>
+        <td  v-show="isAdmin == null">
+            <button v-on:click="bookShow(item.id)">Book Show</button>
         </td>
     </tr>
 </table>
@@ -53,6 +54,7 @@ export default {
             isAdmin:'',
             username:'',
             show:[],
+            booking:[],
         }
     },
     components:{
@@ -67,16 +69,37 @@ export default {
             }
         },
 
+        async bookShow(showid){
+            console.log(showid);
+            //get logged in user for userid
+            
+            //show id is passed as parameter 
+
+            //create booking for userid and showid
+
+            this.loadData();
+        },
+
         async loadData(){
+
+            //get user info
             let user = localStorage.getItem('user-info');
             this.username = JSON.parse(user).username;
             this.isAdmin = JSON.parse(user).admin;
             if(!user){
                 this.$router.push({name:'SignUp'})
             }
-            let result = await axios.get("http://localhost:3000/show");
-            console.warn(result)
-            this.show = result.data;
+
+            //get shows
+            let showsResult = await axios.get("http://localhost:3000/show");
+            this.show = showsResult.data;
+            
+            //get bookings for the logged-in user
+            let bookingsResult = await axios.get("http://localhost:3000/booking?userid="+user.id); 
+            this.booking = bookingsResult.data;
+
+
+            console.warn(this.show);
         }
     },
       async mounted(){
