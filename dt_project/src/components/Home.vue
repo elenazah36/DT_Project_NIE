@@ -1,16 +1,27 @@
 <template>
 <Header />
+
+
 <h1>
     Hello {{username}}, Welcome on Home page
 </h1>
-<table border="1">
-    <tr>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+<body>
+<table>
+    <tr background-color=#095d22 >
         <td>Id</td>
         <td>Name</td>
         <td>Date</td>
         <td>Time</td>
         <td v-show="isAdmin == true">Actions</td>
-
     </tr>
     <tr v-for="item in show" :key="item.id">
         <td>{{item.id}}</td>
@@ -23,6 +34,8 @@
         </td>
     </tr>
 </table>
+</body> 
+
 </template>
 <script>
 
@@ -71,14 +84,62 @@ export default {
 }
 </script>
 
-<style scoped>
-    td{
-        width:160px;
-        height: 50;
-    }
-    table {
-            margin: auto;
-            width: 50%;
-            padding: 10px;
-    }
+<style>
+
+body  {
+  background-image: url(https://images.unsplash.com/photo-1556340346-5e30da977c4d?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871);
+  background-color: #060503;
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+  background-position: right top;
+} 
+
+table{
+  background-color:rgb(194, 194, 194);
+  border-style:solid;
+  border-color: #c2bfb5;
+  border-radius: 10px;
+  padding:5px;
+  margin:auto;
+  width:70%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #8f8f8f;
+}
+
+h1{
+   color:beige; 
+}
+
+router{
+border: 2px solid red;
+border-radius: 12px;
+padding: 5px;
+}
+
+button{
+   background-color: rgb(58, 59, 59); 
+   border-radius: 12px;
+   color:ivory;
+   cursor: pointer;
+}
+router-link:link{
+    color: grey;
+} 
+route-link:visited{
+    color:pink
+} 
+router-link:hover{
+    color: red;
+} 
+router-link:active{
+    color:yellow;
+}
 </style>

@@ -1,18 +1,26 @@
 <template>
-<Header />
+<Header/>
+<br/>
+<br/>
 <h1>
     Hello {{username}}, need replanning? Let's update the thing!
 </h1>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <!--Show add form-->
-<form class="add">
+
+<form class="add" id="up">
     <input type="text" name="name" placeholder="Enter name" v-model="show.name"/>
     <input type="date" name="date" placeholder="Enter date" v-model="show.date"/>
     <input type="time" name="time" placeholder="Enter starting time" v-model="show.time"/>
-    <button type="button" v-on:click="updateShow">Update show</button>
+    <button type="button" id="button" v-on:click="updateShow">Update show</button>
     
 </form>
-
 </template>
 <script>
 import Header from './Header.vue';
@@ -68,3 +76,21 @@ export default {
     
 }
 </script>
+
+<style>
+#up {
+  align-items: center;
+  border:10px;
+  border-color: rgb(191, 0, 255);
+  border-radius: 5px;
+  background-color: #757575;
+  width:30%;
+  height:60%;
+  padding:50px;
+  margin:auto;
+}
+
+#button{
+    background-color: black;
+}
+</style>
