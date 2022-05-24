@@ -59,8 +59,9 @@ export default {
                 this.$router.push({name:'SignUp'})
             }
             let result = await axios.get("http://localhost:3000/show");
-            console.warn(result)
+            //console.warn(result.data)
             this.show = result.data;
+            console.warn(this.show);
         }
     },
       async mounted(){
@@ -74,5 +75,10 @@ export default {
     td{
         width:160px;
         height: 50;
+    }
+    table {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
     }
 </style>
