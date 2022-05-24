@@ -43,22 +43,19 @@ export default{
         Header
     },
     methods:{
-        async deleteBooking(id){
+       async deleteBooking(id){
             //get user for their id
             let user = localStorage.getItem('user-info');
-            //find booking with id==id
-            let bookingResult = await axios.get("http://localhost:3000/booking?userid="+user.id);
-            //find show
-            let showResult = await axios.get("http://localhost:3000/show?id="+bookingResult.data.showid);
-            //seat count ++
-            let resultUpdateShow = await axios.put("http://localhost:3000/booking/"+id,{
-                seats: showResult.seats+1,
-            });
             
-            let resultDeleteBooking = await axios.delete("http://localhost:3000/booking/"+id);
-            if(resultDeleteBooking.status==200 && resultUpdateShow.status==200){
+            let resultSearchBooking = await axios.get("http://localhost:3000/booking/?userid="+JSON.parse(user).id+"&showid="+id);
+            console.log(resultSearchBooking);
+            let bookingValue = resultSearchBooking.data;
+            console.log(bookingValue);
+            let resultDeleteBooking = await axios.delete("http://localhost:3000/booking/"+bookingValue[0].id);
+            if(resultDeleteBooking.status==200){
                 this.loadData();
             }
+            this.loadData();
         },
 
         //used to display bookings for the logged-in user

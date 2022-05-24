@@ -59,22 +59,42 @@ export default {
         Header
     },
     methods:{
-        async deleteShow(id){
-            let result = await axios.delete("http://localhost:3000/show/"+id);
-            console.warn(result)
-            if(result.status==200){
-                this.loadData();
-            }
-        },
 
         async bookShow(showid){
             console.log(showid);
+            let user = localStorage.getItem('user-info'); 
             //get logged in user for userid
-            
+            const result = await axios.post("http://localhost:3000/booking",{
+                     showid:showid,  
+                     userid:JSON.parse(user).id,
+                      
+            });
             //show id is passed as parameter 
+             if(result.status==201){
+                 this.$router.push({name:'History'})
+             }
+             },
 
-            //create booking for userid and showid
+            //create booking or userid and showid
+    
 
+        async deleteShow(id){
+            // delete show
+            let resultShow = await axios.delete("http://localhost:3000/show/"+id);
+
+            // delete bookings associated with the show
+            let getBooking = await axios.get("http://localhost:3000/booking?showid_like=["+id+"]");
+            console.warn(getBooking);
+
+           //eslint-disable-next-line
+            getBooking.data.forEach(async function(item,index){
+                 let deleteBooking = axios.delete("http://localhost:3000/booking/"+item.id);
+                 console.log(deleteBooking);
+             })
+            console.log(getBooking)
+            if(resultShow.status==200 && getBooking.status==200){
+                this.loadData();
+            }
             this.loadData();
         },
 
@@ -95,13 +115,11 @@ export default {
             //get bookings for the logged-in user
             let bookingsResult = await axios.get("http://localhost:3000/booking?userid="+user.id); 
             this.booking = bookingsResult.data;
-
-
             console.warn(this.show);
         }
     },
-      async mounted(){
-        this.loadData();
+      async mounted(){ 
+         this.loadData();
     }
     
 }
@@ -152,6 +170,7 @@ button{
    border-radius: 12px;
    color:ivory;
    cursor: pointer;
+   margin:1px;
 }
 router-link:link{
     color: grey;
