@@ -35,6 +35,21 @@
       "username": "nicoleta",
       "password": "12345",
       "id": 8
+    },
+    {
+      "username": "jacqueline",
+      "password": "12345",
+      "id": 9
+    },
+    {
+      "username": "",
+      "password": "BadauNicoleta2004",
+      "id": 10
+    },
+    {
+      "username": "nicoleta",
+      "password": "12345",
+      "id": 11
     }
   ],
   "show": [
@@ -66,5 +81,16 @@
       "seats": 2
     }
   ],
-  "booking": []
+  "booking": [
+    {
+      "showid": 1,
+      "userid": 9,
+      "id": 1
+    },
+    {
+      "showid": 1,
+      "userid": 1,
+      "id": 2
+    }
+  ]
 }

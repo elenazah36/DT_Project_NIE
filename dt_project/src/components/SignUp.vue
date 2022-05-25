@@ -1,4 +1,7 @@
 <template>
+<br/>
+<br/>
+<br/>
 <img alt="Vue logo" src="../assets/logo_dt.png">
 
 <h1>
@@ -12,7 +15,7 @@
     <input type="text" v-model="username" placeholder="Enter Name" />
     <input type="password" v-model="password" placeholder="Enter Password" />
     <button v-on:click="signUp">Sign Up</button>
-    <p>
+    <p class="outset">
     <router-link to="/login">Login</router-link>
     </p>
 </div>
@@ -86,10 +89,12 @@ export default{
   border:10px;
   border-color: rgb(191, 0, 255);
   border-radius: 5px;
-  background-color: #757575;
+  background-color: #75757599;
   width:30%;
   height:60%;
   padding:50px;
   margin:auto;
 }
+
+p.outset {color:aliceblue;}
 </style>

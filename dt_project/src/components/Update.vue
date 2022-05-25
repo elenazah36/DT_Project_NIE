@@ -80,7 +80,7 @@ export default {
   border:10px;
   border-color: rgb(191, 0, 255);
   border-radius: 5px;
-  background-color: #757575;
+  background-color: #75757599;
   width:30%;
   height:60%;
   padding:50px;
@@ -89,5 +89,7 @@ export default {
 
 #button{
     background-color: black;
+    
 }
+
 </style>

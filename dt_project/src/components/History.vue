@@ -4,6 +4,11 @@
 <h1>
     Hello {{username}}, This is your booking history
 </h1>
+
+<br/>
+<br/>
+<br/>
+<br/>
 <table border="1">
     <tr>
         <td>Id</td>
